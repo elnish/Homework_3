@@ -1,5 +1,5 @@
 (function createTable() {
-  const img = ['<img src="./imagen/1.png">', '<img src="./imagen/2.png">', '<img src="./imagen/3.png">', '<img src="./imagen/4.png">'];
+  const img = ['<img src="./image/1.png">', '<img src="./image/2.png">', '<img src="./image/3.png">', '<img src="./image/4.png">'];
   let table = document.createElement('table'), tr, row, cell;
   let t = document.getElementsByTagName('td');
   for (row = 0; row < 6; row++) {

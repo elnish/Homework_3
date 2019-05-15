@@ -52,22 +52,30 @@ function addElem(block, count, type) {
 
 //Task 5
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
+  var symbols = '0123456789ABCDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+    color += symbols[Math.floor(Math.random() * symbols.length)];
   }
   return color;
 }
 
 var str = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 var d = document.getElementById('task5');
+var letters = str.split('');
 
-var letter = str.split('');
-
-for (var n = 0; n < letter.length; n++) {
-  let span =  document.createElement('span');
-  span.textContent = letter[n];
-  span.style.color = getRandomColor();
+for (var n = 0; n < letters.length; n++) {
+  var randomColor = getRandomColor(), randomColor1;
+  var span =  document.createElement('span');
+  span.textContent = letters[n];
+  if (randomColor === randomColor1) {
+    while (randomColor === randomColor1) {
+      randomColor = getRandomColor();
+    }
+  }
+  span.style.color = randomColor;
   d.appendChild(span);
+  randomColor1 = randomColor;
 }
+
+letters.join('');
