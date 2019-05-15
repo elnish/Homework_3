@@ -15,7 +15,11 @@ function getAttributes() {
 
 //Task 2
 (function createTable() {
-  var table = document.createElement('table'), tr, td, row, cell;
+  var table = document.createElement('table'),
+  tr,
+  td,
+  row,
+  cell;
   for (row = 0; row < 10; row++) {
     tr = document.createElement('tr');
     for (cell = 0; cell < 10; cell++) {
@@ -33,20 +37,26 @@ function getAttributes() {
 })();
 
 //Task 3
-function getClone() {
+var btn = document.getElementById('cloneBtn');
+var cloneElem = document.querySelector('.par');
+btn.addEventListener("click", getClone.bind(null, cloneElem));
+
+function getClone(block) {
   var d = document.getElementById('task3');
-  var p = d.querySelector('.par');
-  var clone = p.cloneNode(true);
+  var clone = block.cloneNode(true);
   d.appendChild(clone);
 }
 
-//Task 4
+//Task 4 
+var addBtn = document.getElementById('addBtn');
+addBtn.addEventListener("click", addElem.bind(null, 'list', 5, 'li'));
+
 function addElem(block, count, type) {
-  var block = document.getElementById(block);
+  var b = document.getElementById(block);
   for (var i = 0; i < count; i++) {
     var el = document.createElement(type);
     el.innerHTML = 'list item';
-    block.appendChild(el);
+    b.appendChild(el);
   }
 }
 
